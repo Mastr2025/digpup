@@ -1,5 +1,3 @@
-"use client"
-
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -35,6 +33,13 @@ const journalData: Record<string, any> = {
     frequency: "Bi-monthly (6 issues per year)",
     loginUrl: "/journals/2/login",
   },
+}
+
+export function generateStaticParams() {
+  return [
+    { id: "1" },
+    { id: "2" },
+  ]
 }
 
 export default async function JournalDetailPage({ params }: { params: Promise<{ id: string }> }) {
